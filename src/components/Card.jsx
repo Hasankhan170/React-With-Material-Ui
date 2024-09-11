@@ -12,8 +12,9 @@ import FavoriteIcon from '@mui/icons-material/Favorite';
 import ShareIcon from '@mui/icons-material/Share';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import MoreVertIcon from '@mui/icons-material/MoreVert';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import axios from 'axios';
+import { Box } from '@mui/material';
 
 const ExpandMore = styled((props) => {
   const { expand, ...other } = props;
@@ -39,17 +40,20 @@ const ExpandMore = styled((props) => {
   ],
 }));
 
-export default function RecipeReviewCard(props) {
-  const [expanded, setExpanded] = React.useState(false);
+export default function RecipeReviewCard() {
+  const [expanded, setExpanded] = useState(false);
 
   const handleExpandClick = () => {
     setExpanded(!expanded);
   };
 
+  const [data,setData] = useState(null)
+
   useEffect(()=>{
     axios(`https://fakestoreapi.com/products`)
     .then((res)=>{
-        console.log(res.data);    
+        console.log(res.data); 
+        setData(res.data);  
     })
     .catch((err)=>{
         console.log(err);
@@ -57,49 +61,55 @@ export default function RecipeReviewCard(props) {
   },[])
 
   return (
-    <Card sx={{ maxWidth: 345 }}>
-      <CardHeader
-        avatar={
-          <Avatar sx={{ bgcolor: red[500] }} aria-label="recipe">
-            R
-          </Avatar>
-        }
-        action={
-          <IconButton aria-label="settings">
-            <MoreVertIcon />
-          </IconButton>
-        }
-        title={props.title}
-        subheader="September 14, 2016"
-      />
-      <CardMedia
-        component="img"
-        height="194"
-        image= {props.src}
-        alt="Paella dish"
-      />
-      <CardContent>
-        <Typography variant="body2" sx={{ color: 'text.secondary' }}>
-            {props.description}
-        </Typography>
-      </CardContent>
-      <CardActions disableSpacing>
-        <IconButton aria-label="add to favorites">
-          <FavoriteIcon />
-        </IconButton>
-        <IconButton aria-label="share">
-          <ShareIcon />
-        </IconButton>
-        <ExpandMore
-          expand={expanded}
-          onClick={handleExpandClick}
-          aria-expanded={expanded}
-          aria-label="show more"
-        >
-          <ExpandMoreIcon />
-        </ExpandMore>
-      </CardActions>
-    </Card>
+    <Box className="d-flex flex-wrap justify-content-center gap-4 mt-5">
+      {data ? data.map((item) => (
+        <Box key={item.id} sx={{ width: 345, display: 'flex', justifyContent: 'center', mb: 3 }}>
+          <Card
+            sx={{
+              width: 345,
+              height: 500,
+              boxShadow: '0px 4px 12px rgba(0, 0, 0, 0.1)',
+              transition: 'transform 0.3s ease',
+              '&:hover': {
+                transform: 'scale(1.02)'
+              }
+            }}
+          >
+            <CardHeader
+              sx={{ height: 80 }} // Fixed height for CardHeader
+              avatar={
+                <Avatar sx={{ bgcolor: red[500] }} aria-label="recipe">
+                  R
+                </Avatar>
+              }
+              action={
+                <IconButton aria-label="settings">
+                  <MoreVertIcon />
+                </IconButton>
+              }
+              title={item.title}
+              subheader={`RS ${item.price}`}
+            />
+            <CardMedia
+              component="img"
+              sx={{ height: 194, width: '100%', objectFit: 'cover' }} // Fixed height and full width for CardMedia
+              image={item.image}
+              alt={item.title}
+            />
+            <CardContent
+              sx={{ height: 100, overflow: 'auto' }} 
+            >
+              <Typography variant="body2" sx={{ color: 'text.secondary' }}>
+                {item.description}
+              </Typography>
+            </CardContent>
+          </Card>
+        </Box>
+      )) : (
+        <Typography variant='h1'>Loading...</Typography>
+      )}
+    </Box>
   );
 }
+
 

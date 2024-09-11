@@ -1,11 +1,10 @@
-import { Box, Typography } from "@mui/material"
+import { Box } from "@mui/material"
 
 
 function Home() {
   return (
     <>
     <Box>
-        <Typography variant="h2">Home</Typography>
     </Box>
     </>
   )
