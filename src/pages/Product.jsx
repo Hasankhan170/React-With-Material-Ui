@@ -1,11 +1,11 @@
-import { Box, Typography } from "@mui/material"
-
+import { Box } from "@mui/material"
+import Card from '../components/Card';
 
 function Product() {
   return (
     <>
     <Box>
-        <Typography variant="h2">Product</Typography>
+        <Card />
     </Box>
     </>
   )

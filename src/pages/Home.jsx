@@ -1,5 +1,5 @@
-import { Box } from "@mui/material"
-import Card from '../components/Card';
+import { Box, Typography } from "@mui/material"
+
 
 
 
@@ -8,7 +8,7 @@ function Home() {
   return (
     <>
     <Box>
-     <Card />
+     <Typography variant="h2">Hello world</Typography>
     </Box>
     </>
   )
