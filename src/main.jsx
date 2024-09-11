@@ -31,7 +31,7 @@ const router = createBrowserRouter([
       },
       {
         path : '*',
-        element : 
+        element : <Typography variant='h1'>Page Not Found!</Typography>
       },
     ]
   }
