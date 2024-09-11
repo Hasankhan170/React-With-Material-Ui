@@ -6,7 +6,7 @@ import Home from './pages/Home.jsx'
 import About from './pages/About.jsx'
 import Contact from './pages/Contact.jsx'
 import Product from './pages/Product.jsx'
-import PageNotFound from './PageNotFound.jsx'
+import PageNotFound from './pages/PageNotFound.jsx'
 
 const router = createBrowserRouter([
   {
@@ -18,15 +18,15 @@ const router = createBrowserRouter([
         element : <Home />
       },
       {
-        path : 'About',
+        path : '/About',
         element : <About />
       },
       {
-        path : 'Contact',
+        path : '/Contact',
         element : <Contact />
       },
       {
-        path : 'Product',
+        path : '/Product',
         element : <Product />
       },
       {
