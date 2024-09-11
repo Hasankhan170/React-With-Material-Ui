@@ -7,39 +7,32 @@ import Typography from '@mui/material/Typography';
 import Menu from '@mui/material/Menu';
 import MenuIcon from '@mui/icons-material/Menu';
 import Container from '@mui/material/Container';
-import Avatar from '@mui/material/Avatar';
 import Button from '@mui/material/Button';
-import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
 import AdbIcon from '@mui/icons-material/Adb';
 import { Link } from 'react-router-dom'; 
 
 const pages = ['/', '/About', '/Contact', '/Product'];
-// const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
 
 function ResponsiveAppBar() {
   const [anchorElNav, setAnchorElNav] = React.useState(null);
-  const [anchorElUser, setAnchorElUser] = React.useState(null);
+
 
   const handleOpenNavMenu = (event) => {
     setAnchorElNav(event.currentTarget);
   };
-  const handleOpenUserMenu = (event) => {
-    setAnchorElUser(event.currentTarget);
-  };
+
 
   const handleCloseNavMenu = () => {
     setAnchorElNav(null);
   };
 
-  const handleCloseUserMenu = () => {
-    setAnchorElUser(null);
-  };
+
 
   return (
-    <AppBar position="static">
+    <AppBar position="static" sx={{backgroundColor : 'black'}}>
       <Container  maxWidth="xl">
-        <Toolbar sx={{color: 'black'}} disableGutters>
+        <Toolbar  disableGutters>
           <Typography
             variant="h6"
             noWrap
@@ -51,7 +44,7 @@ function ResponsiveAppBar() {
               fontFamily: 'monospace',
               fontWeight: 700,
               letterSpacing: '.3rem',
-              color: 'black',
+              color: 'white',
               textDecoration: 'none',
             }}
           >
@@ -88,7 +81,7 @@ function ResponsiveAppBar() {
               {pages.map((page) => (
                 <MenuItem key={page} onClick={handleCloseNavMenu}>
                   <Typography component={Link} to={page} sx={{ textAlign: 'center',textDecoration : 'none' , color: 'black' }}>
-                    {page === '/' ? 'Home' : page.substring(1)}  {/* Display 'Home' instead of '/' */}
+                    {page === '/' ? 'Home' : page.substring(1)} 
                   </Typography>
                 </MenuItem>
               ))}
@@ -122,7 +115,7 @@ function ResponsiveAppBar() {
                 onClick={handleCloseNavMenu}
                 sx={{ my: 2, color: 'white', display: 'block' }}
               >
-                {page === '/' ? 'Home' : page.substring(1)}  {/* Display 'Home' instead of '/' */}
+                {page === '/' ? 'Home' : page.substring(1)} 
               </Button>
             ))}
           </Box>
