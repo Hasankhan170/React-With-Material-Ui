@@ -6,7 +6,7 @@ import Home from './pages/Home.jsx'
 import About from './pages/About.jsx'
 import Contact from './pages/Contact.jsx'
 import Product from './pages/Product.jsx'
-import { Typography } from '@mui/material'
+import PageNotFound from './PageNotFound.jsx'
 
 const router = createBrowserRouter([
   {
@@ -31,7 +31,7 @@ const router = createBrowserRouter([
       },
       {
         path : '*',
-        element : <Typography variant='h1'>Page Not Found!</Typography>
+        element : <PageNotFound/>
       },
     ]
   }
