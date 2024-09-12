@@ -69,7 +69,7 @@ function SingleProduct() {
           </Card>
         </Box>
         ): (
-        <Typography variant='h1'>Loading...</Typography>
+        <Typography variant='h4'>Loading...</Typography>
       )}
     </Box>
   );

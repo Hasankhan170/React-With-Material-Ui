@@ -30,7 +30,7 @@ export default function RecipeReviewCard() {
   }
 
   return (
-    <Box className="d-flex flex-wrap justify-content-center gap-4 mt-5 container">
+    <Box className="d-flex flex-wrap justify-content-center gap-4 mt-5 mb-5 container">
       {data ? data.map((item) => (
         <Box key={item.id} sx={{ width: 300, display: 'flex', justifyContent: 'center', mb: 3 }}>
           <Card
@@ -74,7 +74,7 @@ export default function RecipeReviewCard() {
           </Card>
         </Box>
       )) : (
-        <Typography variant='h1'>Loading...</Typography>
+        <Typography variant='h4'>Loading...</Typography>
       )}
     </Box>
   );

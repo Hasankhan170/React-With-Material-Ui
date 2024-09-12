@@ -1,5 +1,6 @@
 import { Box } from "@mui/material"
 import Card from '../components/Card';
+import Footer from '../components/Footer';
 
 function Product() {
   return (
@@ -7,6 +8,7 @@ function Product() {
     <Box className = 'container'>
         <Card />
     </Box>
+    <Footer/>
     </>
   )
 }
