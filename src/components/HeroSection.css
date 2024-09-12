@@ -1,0 +1,52 @@
+.main-box{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    width: 88%;
+    margin: 0 auto;
+    margin-top: 20px;
+}
+.text-content{
+    padding: 0px 15px;
+}
+
+.para{
+    padding: 10px 0px;
+}
+.hero-image{
+    width: 600px;
+}
+
+
+@media(max-width:950px){
+    /* Styles for smaller screens */
+
+    .hero-image{
+        width: 500px;
+    }
+
+}
+
+@media(max-width:850px){
+    /* Styles for smaller screens */
+
+    .hero-image{
+        width: 400px;
+    }
+
+}
+
+
+@media(max-width:775px){
+    /* Styles for smaller screens */
+    .main-box{
+        flex-direction: column;
+    }
+
+    .text-content{
+        display: flex;
+    }
+
+
+}
