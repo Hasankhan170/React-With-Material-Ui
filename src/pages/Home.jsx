@@ -4,6 +4,7 @@ import HeroSection from "../components/HeroSection"
 import Footer from '../components/Footer';
 import Detail from '../components/Detail';
 import About from './About';
+import Contact from './Contact';
 
 
 
@@ -24,6 +25,7 @@ function Home() {
     </Box>
     <Detail/>
     <About />
+    <Contact />
     <Footer/>
     </>
   )
