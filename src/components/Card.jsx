@@ -1,10 +1,7 @@
 import Card from '@mui/material/Card';
-import CardHeader from '@mui/material/CardHeader';
 import CardMedia from '@mui/material/CardMedia';
 import CardContent from '@mui/material/CardContent';
-import Avatar from '@mui/material/Avatar';
 import Typography from '@mui/material/Typography';
-import { red } from '@mui/material/colors';
 import { useEffect, useState } from 'react';
 import axios from 'axios';
 import { Box, Button} from '@mui/material';
@@ -49,16 +46,6 @@ export default function RecipeReviewCard() {
             }
           }}
         >
-          <CardHeader
-            sx={{ height: 80 }}
-            avatar={
-              <Avatar sx={{ bgcolor: red[500] }} aria-label="recipe">
-                R
-              </Avatar>
-            }
-            title={item.title}
-            subheader={`RS ${item.price}`}
-          />
           <CardMedia
             component="img"
             sx={{ height: 194, width: '100%', objectFit: 'cover' }} 
@@ -72,13 +59,14 @@ export default function RecipeReviewCard() {
             }} 
           >
             <Typography variant="body2" sx={{ color: 'text.secondary', marginBottom :'10px' }}>
-              {item.description}
+              {item.title}
+              <br /> 
+              Rs : {item.price}
             </Typography>
           </CardContent>
           <Button
           onClick={()=> SingleProduct(item)}
-            variant="contained"
-            color="primary"
+            variant="outlined"
             sx={{ width: '100%', mt: 'auto' }} 
           >
             Buy Now
