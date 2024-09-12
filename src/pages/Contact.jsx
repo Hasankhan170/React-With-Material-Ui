@@ -1,6 +1,6 @@
 import { Box, Button, Typography } from "@mui/material"
 import "../pages/Contact.css"
-import Footer from '../components/Footer';
+
 
 function Contact() {
   return (
@@ -22,7 +22,6 @@ function Contact() {
       <Button className="btn" variant="outlined">Hire Me</Button>
       </Box>
     </Box>
-    <Footer/>
     </>
   )
 }

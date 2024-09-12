@@ -1,6 +1,6 @@
 import { Box, Typography } from "@mui/material"
 import "../pages/About.css"
-import Footer from '../components/Footer';
+
 
 function About() {
 
@@ -42,7 +42,6 @@ function About() {
 
         
     </Box>
-    <Footer/>
     </>
   )
 }
