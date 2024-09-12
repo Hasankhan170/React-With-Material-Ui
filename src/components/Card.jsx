@@ -56,13 +56,12 @@ export default function RecipeReviewCard() {
               sx={{
                 flex: 1, 
                 overflow: 'auto',
-                textAlign: 'center'
               }} 
             >
-              <Typography variant="body2" sx={{ color: 'text.secondary', marginBottom: '10px' }}>
+              <Typography variant="body2" sx={{ color: 'text.secondary', marginBottom: '10px', fontWeight: 'bold', }}>
                 {item.title}
                 <br />
-                Rs: {item.price}
+                $:{item.price}
               </Typography>
             </CardContent>
             <Button

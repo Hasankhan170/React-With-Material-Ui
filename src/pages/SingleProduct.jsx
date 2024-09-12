@@ -56,7 +56,7 @@ function SingleProduct() {
               <Typography variant="body2" sx={{ color: 'text.secondary', marginBottom :'10px' }}>
                 {data.title}
                 <br /> 
-                Rs : {data.price}
+                $:{data.price}
               </Typography>
             </CardContent>
             <Button
