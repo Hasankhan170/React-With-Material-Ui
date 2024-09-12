@@ -9,7 +9,7 @@ function Home() {
 
   return (
     <>
-    <Box>
+    <Box className = 'container'>
      <Typography variant="h2">Hello world</Typography>
     </Box>
     </>

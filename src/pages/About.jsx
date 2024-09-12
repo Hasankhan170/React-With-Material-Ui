@@ -5,7 +5,7 @@ function About() {
 
   return (
     <>
-    <Box>
+    <Box className = 'container'>
         <Typography variant="h2">About</Typography>
     </Box>
     </>

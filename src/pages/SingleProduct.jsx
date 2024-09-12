@@ -26,7 +26,7 @@ function SingleProduct() {
   };
 
   return (
-    <Box className="d-flex flex-wrap justify-content-center gap-4 mt-5">
+    <Box className="container d-flex flex-wrap justify-content-center gap-4 mt-5">
       {data ? (
         <Box sx={{ width: 345, display: 'flex', justifyContent: 'center', mb: 3 }}>
           <Card
