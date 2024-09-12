@@ -6,7 +6,7 @@ const HeroSection = () => {
     return (
         <Box className="main-box">
           <Box className="text-content">
-            <Typography variant="h4">CHINK TAPAK DAM DAM</Typography>
+            <Typography className="head" variant="h4">CHINK TAPAK DAM DAM</Typography>
             <Typography className= "para" variant="body1">
               Tapak dam dam yang terletak di sebelah pantai, yang bertujuan
               menangani kebutuhan air yang terlalu banyak dan terlalu rendah
