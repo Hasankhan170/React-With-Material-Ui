@@ -7,14 +7,14 @@ import Typography from '@mui/material/Typography';
 import { red } from '@mui/material/colors';
 import { useEffect, useState } from 'react';
 import axios from 'axios';
-import { Box, Button  } from '@mui/material';
+import { Box, Button} from '@mui/material';
+import { useNavigate } from 'react-router-dom';
 
 
 export default function RecipeReviewCard() {
 
-
-
   const [data,setData] = useState(null)
+  const navigate = useNavigate()
 
   useEffect(()=>{
     axios(`https://fakestoreapi.com/products`)
@@ -27,6 +27,11 @@ export default function RecipeReviewCard() {
     })
   },[])
 
+  const SingleProduct = (item)=>{
+    console.log(item);
+    navigate(`/SingleProduct/${item.id}`)
+  }
+
   return (
   <Box className="d-flex flex-wrap justify-content-center gap-4 mt-5">
     {data ? data.map((item) => (
@@ -34,7 +39,7 @@ export default function RecipeReviewCard() {
         <Card
           sx={{
             width: 345,
-            maxHeight: 500, // Set a maximum height for the card
+            maxHeight: 500,
             display: 'flex',
             flexDirection: 'column',
             boxShadow: '0px 4px 12px rgba(0, 0, 0, 0.1)',
@@ -71,9 +76,10 @@ export default function RecipeReviewCard() {
             </Typography>
           </CardContent>
           <Button
+          onClick={()=> SingleProduct(item)}
             variant="contained"
             color="primary"
-            sx={{ width: '100%', mt: 'auto' }} // Pushes the button to the bottom
+            sx={{ width: '100%', mt: 'auto' }} 
           >
             Buy Now
           </Button>

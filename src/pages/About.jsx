@@ -2,6 +2,7 @@ import { Box, Typography } from "@mui/material"
 
 
 function About() {
+
   return (
     <>
     <Box>

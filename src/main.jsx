@@ -8,6 +8,7 @@ import Contact from './pages/Contact.jsx'
 import Product from './pages/Product.jsx'
 import PageNotFound from './pages/PageNotFound.jsx'
 import 'bootstrap/dist/css/bootstrap.min.css';
+import SingleProduct from './pages/SingleProduct.jsx'
 
 const router = createBrowserRouter([
   {
@@ -29,6 +30,10 @@ const router = createBrowserRouter([
       {
         path : '/Product',
         element : <Product />
+      },
+      {
+        path : '/SingleProduct/:id',
+        element : <SingleProduct />
       },
       {
         path : '*',
