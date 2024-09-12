@@ -9,7 +9,6 @@ import MenuItem from '@mui/material/MenuItem';
 import Container from '@mui/material/Container';
 import Button from '@mui/material/Button';
 import MenuIcon from '@mui/icons-material/Menu';
-import AdbIcon from '@mui/icons-material/Adb';
 import SearchIcon from '@mui/icons-material/Search';
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import PersonIcon from '@mui/icons-material/Person';
@@ -32,7 +31,6 @@ function ResponsiveAppBar() {
     <AppBar className = "container" position="static" sx={{ backgroundColor: 'white', color: 'black' }}>
       <Container maxWidth="xl">
         <Toolbar disableGutters>
-          {/* Logo for large screens */}
           <Typography
             variant="h6"
             noWrap
@@ -50,8 +48,6 @@ function ResponsiveAppBar() {
           >
             CTDD
           </Typography>
-
-          {/* Hamburger Menu Icon for small screens */}
           <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
             <IconButton
               size="large"
@@ -92,9 +88,6 @@ function ResponsiveAppBar() {
               ))}
             </Menu>
           </Box>
-
-          {/* Logo for small screens */}
-          <AdbIcon sx={{ display: { xs: 'flex', md: 'none' }, mr: 1 }} />
           <Typography
             variant="h5"
             noWrap
@@ -111,11 +104,9 @@ function ResponsiveAppBar() {
               textDecoration: 'none',
             }}
           >
-            LOGO
+            CTDD
           </Typography>
-
-          {/* Navigation Buttons for large screens */}
-          <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
+          <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' }, justifyContent: 'center' }}>
             {pages.map((page) => (
               <Button
                 key={page}
@@ -128,8 +119,6 @@ function ResponsiveAppBar() {
               </Button>
             ))}
           </Box>
-
-          {/* Search Bar, Shopping Cart, and Profile Icons */}
           <Box sx={{ display: 'flex', alignItems: 'center', ml: 2 }}>
             <IconButton color="inherit" sx={{ ml: 1 }}>
               <SearchIcon />
@@ -148,5 +137,6 @@ function ResponsiveAppBar() {
 }
 
 export default ResponsiveAppBar;
+;
 
 

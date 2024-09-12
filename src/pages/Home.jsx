@@ -1,4 +1,4 @@
-import { Box, Typography } from "@mui/material"
+import HeroSection from "../components/HeroSection"
 
 
 
@@ -9,9 +9,7 @@ function Home() {
 
   return (
     <>
-    <Box className = 'container'>
-     <Typography variant="h2">Hello world</Typography>
-    </Box>
+    <HeroSection/>
     </>
   )
 }
