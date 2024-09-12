@@ -3,10 +3,12 @@
     justify-content: center;
     align-items: center;
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-    width: 88%;
+    width: 89%;
     margin: 0 auto;
     margin-top: 20px;
     margin-bottom: 50px;
+    border-radius: 20px;
+    overflow: hidden;
 }
 .text-content{
     padding: 0px 15px;
@@ -17,6 +19,8 @@
 }
 .hero-image{
     width: 600px;
+    border-radius: 0px 20px 0px 0px;
+    overflow: hidden;
 }
 
 

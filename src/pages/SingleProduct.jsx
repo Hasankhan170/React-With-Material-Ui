@@ -26,7 +26,7 @@ function SingleProduct() {
 
   return (
     <Box className="d-flex flex-wrap justify-content-center gap-4 mt-5">
-      {data ?
+      {data ? (
         <Box  sx={{ width: 280, display: 'flex', justifyContent: 'center', mb: 3 }}>
           <Card
             sx={{
@@ -60,7 +60,7 @@ function SingleProduct() {
               </Typography>
             </CardContent>
             <Button
-            onClick={()=> handleBuyNow(data)}
+            onClick={handleBuyNow}
               variant="outlined"
               sx={{ width: '100%', mt: 'auto' }} 
             >
@@ -68,7 +68,7 @@ function SingleProduct() {
             </Button>
           </Card>
         </Box>
-        : (
+        ): (
         <Typography variant='h1'>Loading...</Typography>
       )}
     </Box>
